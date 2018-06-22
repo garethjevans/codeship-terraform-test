@@ -16,8 +16,8 @@ function configure_environment() {
 
 function apply_terraform() {
 	./terraform init
-	./terraform plan -var 'credentials=~/.gke_sa.json'
-	./terraform apply -var 'credentials=~/.gke_sa.json' -auto-approve
+	./terraform plan
+	./terraform apply -auto-approve
 }
 
 install_dependencies

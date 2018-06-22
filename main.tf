@@ -3,12 +3,10 @@ terraform {
   backend "gcs" {
     bucket      = "cluster01-state"
     prefix      = "terraform/state"
-    credentials = "${file("${var.credentials}")}"
   }
 }
 
 provider "google" {
-  credentials = "${file("${var.credentials}")}"
   project     = "${var.gcp_project}"
 }
 
