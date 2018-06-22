@@ -1,7 +1,7 @@
 terraform {
   required_version = ">= 0.11.0"
   backend "gcs" {
-    bucket      = "${var.cluster_name}-state"
+    bucket      = "cluster01-state"
     prefix      = "terraform/state"
     credentials = "${file("${var.credentials}")}"
   }
