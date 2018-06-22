@@ -1,5 +1,10 @@
 terraform {
   required_version = ">= 0.11.0"
+  backend "gcs" {
+    bucket      = "${var.cluster_name}-state"
+    prefix      = "terraform/state"
+    credentials = "${file("${var.credentials}")}"
+  }
 }
 
 provider "google" {
